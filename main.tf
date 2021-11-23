@@ -34,7 +34,3 @@ resource "google_compute_instance" "default_compute" {
 
   metadata_startup_script = "sudo apt-get update && sudo apt-get install -yqq nginx"
 }
-
-output "address" {
-  value = "${google_compute_instance.default.network_interface.0.access_config.0.assigned_nat_ip}"
-}
