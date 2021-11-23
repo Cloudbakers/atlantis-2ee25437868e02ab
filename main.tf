@@ -17,7 +17,7 @@ resource "google_compute_instance" "default_compute" {
   machine_type = "n1-highcpu-2"
   zone         = "us-east4-b"
 
-  can_ip_forward            = "true"
+  can_ip_forward            = "false"
   allow_stopping_for_update = "true"
 
   tags = ["web"]
@@ -30,12 +30,8 @@ resource "google_compute_instance" "default_compute" {
 
   network_interface {
     network       = "default"
-    access_config = {}
+    #access_config = {}
   }
 
   metadata_startup_script = "sudo apt-get update && sudo apt-get install -yqq nginx"
-}
-
-output "address" {
-  value = "${google_compute_instance.default.network_interface.0.access_config.0.assigned_nat_ip}"
 }
