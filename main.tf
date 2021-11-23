@@ -14,7 +14,7 @@ resource "google_compute_firewall" "default_firewall" {
 
 resource "google_compute_instance" "default_compute" {
   name         = "demo"
-  machine_type = "n1-highcpu-4"
+  machine_type = "n1-highcpu-2"
   zone         = "us-east4-b"
 
   can_ip_forward            = "true"
