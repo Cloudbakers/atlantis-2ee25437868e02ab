@@ -1,0 +1,4 @@
+.terraform
+credentials.json
+env.sh
+terraform.tfstate*
